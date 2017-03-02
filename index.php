@@ -36,7 +36,7 @@
 		</form>
 	</div>
 	<div class="logrej">
-		<a href="rejestracja.php" id="stworz">Nie masz jeszcze konta?!</br></br>
+		<a href="rejestracja.php" id="stworz">Nie masz jeszcze konta a?!</br></br>
 		Koniecznie utwórz je w naszym serwisie!!</a>
 	</div>
 	<div style="clear:both"></div>
