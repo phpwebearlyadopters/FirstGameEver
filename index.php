@@ -1,16 +1,17 @@
 <?php
 	session_start();
-	$user=$_POST['user'];
-	$haslo=$_POST['user'];
-	$login=htmlentities($login,ENT_QUOTES,"UTF-8");
-	$haslo=htmlentities($haslo,ENT_QUOTES,"UTF-8");
-	$haslo_hash=password_hash($haslo,PASSWORD_DEFAULT);
-	require_once "connect.php"
-	try{
-		$pdo = new PDO('mysql:host='.$host.';dbname='.$db_name, $username, $password );
-	}
-	catch{
-	}
+	 if (isset($_POST['user'])) {
+        $user = $_POST['user'];
+        $haslo = $_POST['user'];
+        $user = htmlentities($login, ENT_QUOTES, "UTF-8");
+        $haslo = htmlentities($haslo, ENT_QUOTES, "UTF-8");
+        $haslo_hash = password_hash($haslo, PASSWORD_DEFAULT);
+    }
+	  require_once "connect.php";
+    try{
+        $pdo = new PDO('mysql:host='.$host.';dbname='.$db_name, $db_user, $db_password );
+    } catch (Exception $e) {
+    }
 ?>
 <!DOCTYPE HTML>
 <html lang="pl">
@@ -36,7 +37,7 @@
 		</form>
 	</div>
 	<div class="logrej">
-		<a href="rejestracja.php" id="stworz">Nie masz jeszcze konta a?!</br></br>
+		<a href="rejestracja.php" id="stworz">Nie masz jeszcze konta?!</br></br>
 		Koniecznie utwórz je w naszym serwisie!!</a>
 	</div>
 	<div style="clear:both"></div>
