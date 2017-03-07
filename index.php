@@ -20,6 +20,7 @@
 					{
 					$_SESSION['zalogowany'];
 					header("Location:gra/gra.php");
+					unset($pdo);
 						
 				}
 				else
@@ -34,6 +35,8 @@
 			echo "</br> Informacja developerska:".$e;
     }
 	}
+	//Czy gdzies trzeba zamykac polaczenie z baza czy wystarczy zwykle unset($pdo)?
+	
 ?>
 <!DOCTYPE HTML>
 <html lang="pl">
