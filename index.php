@@ -2,16 +2,38 @@
 	session_start();
 	 if (isset($_POST['user'])) {
         $user = $_POST['user'];
-        $haslo = $_POST['user'];
-        $user = htmlentities($login, ENT_QUOTES, "UTF-8");
+        $haslo = $_POST['haslo'];
+        $user = htmlentities($user, ENT_QUOTES, "UTF-8");
         $haslo = htmlentities($haslo, ENT_QUOTES, "UTF-8");
-        $haslo_hash = password_hash($haslo, PASSWORD_DEFAULT);
-    }
-	  require_once "connect.php";
+		
+		require_once "connect.php";
     try{
         $pdo = new PDO('mysql:host='.$host.';dbname='.$db_name, $db_user, $db_password );
-    } catch (Exception $e) {
+		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$log=$pdo->prepare('SELECT login ,haslo FROM uzytkownicy WHERE login=:login ');
+		$log->bindParam(':login', $user, PDO::PARAM_STR,20);
+		$log->execute();
+		$wynik=$log->rowCount();
+			if($wynik>0){
+				$dane=$log->fetch();
+			if(password_verify($haslo, $dane['haslo']))
+					{
+					$_SESSION['zalogowany'];
+					header("Location:gra/gra.php");
+						
+				}
+				else
+				{
+					$blad="Niepoprawny login lub hasło!";
+				}
+			}
+		}
+	 
+	catch (PDOException $e) {
+			echo '<span style="color:red">Błąd serwera! Prosimy spróbować później!</span>';
+			echo "</br> Informacja developerska:".$e;
     }
+	}
 ?>
 <!DOCTYPE HTML>
 <html lang="pl">
@@ -35,6 +57,13 @@
 			Hasło:<input type="password" name="haslo" placeholder="Podaj hasło"/></br>
 			<input type="submit" value="Zaloguj"/>
 		</form>
+		<span class="error"><?php
+				if(isset($blad))
+			{
+				echo $blad;
+				unset($blad);
+			}
+			?></span>
 	</div>
 	<div class="logrej">
 		<a href="rejestracja.php" id="stworz">Nie masz jeszcze konta?!</br></br>

@@ -108,8 +108,8 @@
 		}
 		catch(Exception $e)
 		{
-			echo '<span style=color:"red;">Błąd serwera! Prosimy spróbować później!</span>';
-			//echo "</br> Informacja developerska:".$e;
+			echo '<span style="color:red">Błąd serwera! Prosimy spróbować później!</span>';
+			echo "</br> Informacja developerska:".$e;
 		}
 	}
 ?>
@@ -220,7 +220,7 @@
 				echo $e_pass ;
 				unset($e_pass);
 			}
-		?></span>
+		?></span> 
 		Powtórz hasło:</br>
 		<input type="password" name="pass2"/></br>
 		Podaj e-mail:</br>
