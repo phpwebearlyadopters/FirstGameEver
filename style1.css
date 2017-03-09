@@ -14,7 +14,7 @@ ul>li{
 	
 }
 a{
-	color:black;	
+	color:black;
 }
 a:hover{
 	cursor:pointer;
@@ -112,6 +112,7 @@ a:hover{
 	bottom:0;
 	margin-bottom:50px;
 	margin-right:50px;
+	padding:10px;
 }
 
 input[type=text],

@@ -18,7 +18,8 @@
 				$dane=$log->fetch();
 			if(password_verify($haslo, $dane['haslo']))
 					{
-					$_SESSION['zalogowany'];
+					$_SESSION['zalogowany']=true;;
+					$_SESSION['user']=$dane['login'];
 					header("Location:gra/gra.php");
 					unset($pdo);
 						
@@ -46,7 +47,7 @@
 <meta name="description" content="Pierwsza gra posiadająca własny system logowania i surowców.Wciągająca jak żadna inna!!"/>
 <meta name="keywords" content="gra,strategia,logowanie,najlepsza"/>
 <meta http-equiv="X-UA Compatible" content="IE=edge,chrome=1"/>
-<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="style1.css" type="text/css" />
 <link href="https://fonts.googleapis.com/css?family=Lato:400,900&amp;subset=latin-ext" rel="stylesheet">
 </head>
 <body>
