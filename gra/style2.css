@@ -1,0 +1,101 @@
+body{
+	background-image:url("img/mooning.png");
+	font-family: 'Lato', sans-serif;
+}
+#container{
+	width:1200px;
+	margin-left:auto;
+	margin-right:auto;
+	
+}
+/*Logo strony*/
+#logo{
+	margin-top:50px;
+	margin-bottom:100px;
+	background-image:url("img/grey_wash_wall.png");
+	font-size:60px;
+	text-align:center;
+	padding:15px;
+	letter-spacing:2px;
+	color: lightgray;
+}
+#menu{
+	float:left;
+	width:200px;
+	height:500px;
+	margin-right:75px;
+	background-image:url("img/grey_wash_wall.png");
+}
+#content{
+	float:left;
+	width:700px;
+	min-height:500px;
+	margin-right:75px;
+	background-image:url("img/grey_wash_wall.png");
+}
+#panel{
+	float:left;
+	width:150px;
+	height:500px;
+	background-image:url("img/grey_wash_wall.png");
+}
+#dane{
+	z-index:100;
+	position:absolute;
+	right:130px;
+	top:220px;
+}
+a{
+	text-decoration:none;
+	color:black;
+	padding:5px;
+}
+a:hover{
+	color:blue;
+	font-weight:bold;
+	
+}
+.menu{
+	color:lightgray;
+	margin:10px 30px 10px 0;
+	border-bottom:0.5px dotted lightgray;
+	padding:5px;
+	display:block;
+	
+}
+.menu:hover{
+	cursor:pointer;
+	background-color:orange;
+	color:black;
+}
+#contact{
+	color:black;
+	text-align:center;
+	display:none;
+}
+#homepage{
+	display:block;
+}
+#character{
+	display:none;
+}
+#settings{
+	display:none;
+}
+#statistics{
+	display:none;
+}
+#zmiana_h{
+	display:none;
+}
+#usun_k{
+	display:none;
+}
+
+
+
+	
+	
+
+
+	
